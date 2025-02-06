@@ -101,8 +101,8 @@ test-debug-last: ## Debug last failed test with pdb
 
 .PHONY: manual_test
 manual_test:
-	mkdir -p manual_test && cd manual_test
-	cookiecutter https://github.com/GatlenCulp/cookiecutter-gatpack
+	mkdir -p manual_test && cd manual_test && \
+	cookiecutter .. --checkout "dev"
 
 .PHONY: _clean_manual_test
 _clean_manual_test:
@@ -120,15 +120,13 @@ data: requirements
 # Self Documenting Commands                                                     #
 #################################################################################
 
-.DEFAULT_GOAL := help
-
 .PHONY: _print-logo
 _print-logo: ## Prints the GOTem logo
 	@echo "\033[38;5;39m   ____  ___ _____"
-		@echo "  / ___|/ _ \_   _|__ _ __ ___"
-		@echo " | |  _| | | || |/ _ \ '_ \` _ \"
-		@echo " | |_| | |_| || |  __/ | | | | |"
-		@echo "  \____|\___/ |_|\___|_| |_| |_|\033[0m"
+	@echo "  / ___|/ _ \_   _|__ _ __ ___"
+	@echo " | |  _| | | || |/ _ \ '_ \` _ \\"
+	@echo " | |_| | |_| || |  __/ | | | | |"
+	@echo "  \____|\___/ |_|\___|_| |_| |_|\033[0m"
 
 
 .PHONY: help
@@ -139,3 +137,5 @@ help: _print-logo  ## Show this help message
 
 .PHONY: all
 all: help
+
+.DEFAULT_GOAL := all
