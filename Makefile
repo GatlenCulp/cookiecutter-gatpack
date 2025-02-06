@@ -99,6 +99,11 @@ test-continuous: _prep ## Run tests in watch mode using pytest-watcher
 test-debug-last: ## Debug last failed test with pdb
 	pytest --lf --pdb
 
+.PHONY: manual_test
+manual_test:
+	mkdir -p manual_test && cd manual_test
+	cookiecutter https://github.com/GatlenCulp/cookiecutter-gatpack
+
 .PHONY: _clean_manual_test
 _clean_manual_test:
 	rm -rf manual_test
@@ -117,13 +122,17 @@ data: requirements
 
 .DEFAULT_GOAL := help
 
+.PHONY: _print-logo
+_print-logo: ## Prints the GOTem logo
+	@echo "\033[38;5;39m   ____  ___ _____"
+		@echo "  / ___|/ _ \_   _|__ _ __ ___"
+		@echo " | |  _| | | || |/ _ \ '_ \` _ \"
+		@echo " | |_| | |_| || |  __/ | | | | |"
+		@echo "  \____|\___/ |_|\___|_| |_| |_|\033[0m"
+
+
 .PHONY: help
-help:  ## Show this help message
-	@echo "\033[38;5;39m   ____  ___ _____              "
-	@echo "  / ___|/ _ \_   _|__ _ __ ___  "
-	@echo " | |  _| | | || |/ _ \ '_ \` _ \ "
-	@echo " | |_| | |_| || |  __/ | | | | |"
-	@echo "  \____|\___/ |_|\___|_| |_| |_|\033[0m"
+help: _print-logo  ## Show this help message
 	@echo "\n\033[1m~ Available rules: ~\033[0m\n"
 	@echo "For VSCode/Cursor, try: ⇧ ⌘ P, Tasks: Run Task\n"
 	@grep -E '^[a-zA-Z][a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[38;5;222m%-30s\033[0m %s\n", $$1, $$2}'
