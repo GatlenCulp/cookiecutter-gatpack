@@ -5,6 +5,7 @@
 		".vscode",
 		"assets",
 		"cover",
+		"device_readings",
 		"further_readings",
 		"output",
 		"readings"
