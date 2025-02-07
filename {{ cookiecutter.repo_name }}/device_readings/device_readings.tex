@@ -15,17 +15,17 @@
 % ━━━━━━━━━━━━━━━━━━━━━━━━ Define Variables ━━━━━━━━━━━━━━━━━━━━━━━━ %
 \def\logopath{../assets/caiac_logo.png}  % Changed to relative path
 \def\programlongname{
-    {{ program_long_name }}
+    Intro Fellowship
 }
 \def\timeperiod{
-    {{ time_period }}
+    Spring 2025
 }
 
 % Define custom colors from JSON
 % \definecolor{primaryColor}{HTML}{B48BFF}
-\definecolor{primaryColor}{HTML}{ {{ primary_color }} }
+\definecolor{primaryColor}{HTML}{ 0B0D63 }
 % \definecolor{primaryFaded}{HTML}{AEA3CA}
-\definecolor{primaryFaded}{HTML}{ {{ primary_color_faded }} }
+\definecolor{primaryFaded}{HTML}{ 789BD6 }
 
 \begin{document}
 \thispagestyle{empty} % Remove page numbering
@@ -40,22 +40,16 @@
 \vspace{1em}
 
 % ───────────────────── Readings Table ─────────────────────
-% {% for reading in core_readings %}
-% {% if reading.read_on_device %}
-\noindent\textbf{ {{reading.title}} }\\
-\textit{ {{reading.author}} ({{reading.year}}) }\\
-{\small \url{ {{reading.url | replace("http://", "") | replace("https://", "")}} }}
+% 
+% 
+\noindent\textbf{ Neural Networks }\\
+\textit{ 3Blue1Brown (2024) }\\
+{\small \url{ youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&feature=shared }}
 
 \vspace{1em}
-% {% endif %}
-% {% endfor %}
+% 
+% 
 \textbf{Notes:}
-% {# EXAMPLE
-\noindent\textbf{ Auditing large language models: A three-layered approach }\\
-\textit{ Mökander et al. (2023) }\\
-{\small \url{ papers.ssrn.com/sol3/papers.cfm?abstract_id=4361607 }}
-
-\vspace{4em}
-% #}
+% 
 
 \end{document}

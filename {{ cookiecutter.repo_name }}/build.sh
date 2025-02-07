@@ -13,6 +13,10 @@ COVER_LATEX_TEMPLATE=cover/cover.jinja.tex
 COVER_LATEX=cover/cover.tex
 COVER_PDF=cover/cover.pdf
 
+DEVICE_READINGS_LATEX_TEMPLATE=device_readings/device_readings.jinja.tex
+DEVICE_READINGS_LATEX=device_readings/device_readings.tex
+DEVICE_READINGS_PDF=device_readings/device_readings.pdf
+
 READINGS_PDFS=readings/*.pdf
 
 FURTHER_READINGS_LATEX_TEMPLATE=further_readings/further_readings.jinja.tex
@@ -32,6 +36,17 @@ gatpack build \
     $COVER_LATEX \
     $COVER_PDF
 
+# Build Device Readings Page
+rm -f $DEVICE_READINGS_LATEX
+rm -f $DEVICE_READINGS_PDF
+gatpack render \
+    $DEVICE_READINGS_LATEX_TEMPLATE \
+    $DEVICE_READINGS_LATEX \
+    $COMPOSE
+gatpack build \
+    $DEVICE_READINGS_LATEX \
+    $DEVICE_READINGS_PDF
+
 # Build Further Readings Page
 rm -f $FURTHER_READINGS_LATEX
 rm -f $FURTHER_READINGS_PDF
@@ -47,8 +62,9 @@ gatpack build \
 rm -f $OUTPUT_PDF
 gatpack combine \
     $COVER_PDF \
-    $READINGS_PDFS \
+    $DEVICE_READINGS_PDF\
     $FURTHER_READINGS_PDF \
     $OUTPUT_PDF
+    # $READINGS_PDFS \
 
 open $OUTPUT_PDF
