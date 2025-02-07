@@ -4,7 +4,7 @@ This sample project is created by [GatPack](<>), a Python templating tool.
 
 ## About this project
 
-_For user to fill out!_
+{{ cookiecutter.description }}
 
 ## Setup
 

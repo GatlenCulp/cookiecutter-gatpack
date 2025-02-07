@@ -97,6 +97,7 @@ manual_test:
 	rm -rf manual_test
 	mkdir -p manual_test && cd manual_test && \
 	cookiecutter .. --checkout "dev"
+	# gatpack init
 
 .PHONY: _clean_manual_test
 _clean_manual_test:
