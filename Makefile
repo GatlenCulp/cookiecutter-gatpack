@@ -26,14 +26,9 @@ create_environment: ## Set up python interpreter environment
 	uv venv
 	@echo ">>> New virtualenv with uv created. Activate with:\nsource '.venv/bin/activate'"
 
-
-
 .PHONY: requirements
 requirements: ## Install Python Dep
-	
 	uv sync
-	
-
 
 .PHONY: publish-all
 publish-all: format lint publish docs-publish ## Run format, lint, publish package and docs
@@ -48,11 +43,9 @@ clean: ## Delete all compiled Python files
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
 
-
 .PHONY: lint ## Lint using ruff (use `make format` to do formatting)
 lint:
 	ruff check --config pyproject.toml cookiecutter_gatpack
-
 
 .PHONY: format ## Format source code with black
 format:

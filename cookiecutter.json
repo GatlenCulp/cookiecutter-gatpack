@@ -1,4 +1,4 @@
 {
-	"project_name": "project_name",
+	"project_name": "gatpack_project",
 	"repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}"
 }

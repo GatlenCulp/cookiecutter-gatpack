@@ -14,13 +14,7 @@
 
 https://gatlenculp.github.io/cookiecutter-gatpack
 
-You can initialize this with
-
-```bash
-cookiecutter https:/
-
 ## Project Organization
-
 
 ```
 
@@ -101,24 +95,19 @@ cookiecutter https:/
   <a href="https://github.com//cookiecutter-gatpack/issues/new?assignees=&labels=question&template=04_SUPPORT_QUESTION.md&title=support%3A+">Ask a Question</a>
 </div>
 
-
 <div align="center">
 <br />
 
 [![Project license](https://img.shields.io/github/license/GatlenCulp/.svg?style=flat-square)](LICENSE)
 
 [![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/GatlenCulp/cookiecutter-gatpack/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
-[![code with love by ](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-}}cookiecutter._github_username}}-ff1414.svg?style=flat-square)](https://github.com/GatlenCulp)
+[![code with love by ](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-%7D%7Dcookiecutter._github_username%7D%7D-ff1414.svg?style=flat-square)](https://github.com/GatlenCulp)
 
 </div>
-
-
 
 ______________________________________________________________________
 
 ## About
-
-
 
 <table><tr><td>
 
@@ -195,11 +184,9 @@ If you want to say **thank you** or/and support active development of cookiecutt
 
 Together, we can make cookiecutter-gatpack **better**!
 
-
 ## Contributing
 
 First off, thanks for taking the time to contribute! Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are **greatly appreciated**.
-
 
 Please read [our contribution guidelines](docs/CONTRIBUTING.md), and thank you for being involved!
 
@@ -227,5 +214,6 @@ See [LICENSE](LICENSE) for more information.
 > **[?]**
 > If your work was funded by any organization or institution, acknowledge their support here.
 > In addition, if your work relies on other software libraries, or was inspired by looking at other work, it is appropriate to acknowledge this intellectual debt too.
-> 
+
+```
 ```
