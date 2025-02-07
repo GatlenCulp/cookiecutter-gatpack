@@ -94,6 +94,7 @@ test-debug-last: ## Debug last failed test with pdb
 
 .PHONY: manual_test
 manual_test:
+	rm -rf manual_test
 	mkdir -p manual_test && cd manual_test && \
 	cookiecutter .. --checkout "dev"
 

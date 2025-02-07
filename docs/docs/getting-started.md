@@ -44,7 +44,7 @@ gatpack build further_readings.tex further_readings.pdf
 gatpack combine cover.pdf further_readings.pdf packet.pdf
 
 # Add footer to the readings
-gatpack footer packet.pdf "Page {{ n }} of {{ N }}" packet-final.pdf
+gatpack footer packet.pdf "Page { n } of { N }" packet-final.pdf
 ```
 
 Then you can run this with `YOUR_PROJECT/example/build.sh`.

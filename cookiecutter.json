@@ -1,4 +1,6 @@
 {
-	"project_name": "gatpack_project",
-	"repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}"
+	"_copy_without_render": ["*", "!README.md"],
+	"project_name": "GatPack Project",
+	"repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+	"description": "Creates PDF packets for the AI Safety Fundamentals Reading Group"
 }
