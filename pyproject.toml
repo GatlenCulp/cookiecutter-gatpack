@@ -21,12 +21,12 @@ classifiers = [
 requires-python = "~=3.12"
 
 dependencies = [
-    "gatpack>=0.0.2",
+    "gatpack>=0.0.3",
 ]
 
-# [project.urls]
+[project.urls]
 # Homepage = "https://.github.io/cookiecutter-gatpack/"
-# Repository = "https://github.com//cookiecutter-gatpack"
+Repository = "https://github.com/GatlenCulp/cookiecutter-gatpack"
 # Documentation = "https://.github.io/cookiecutter-gatpack/"
 
 [tool.ruff]
