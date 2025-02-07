@@ -10,75 +10,104 @@
 \usepackage{sectsty}    % Allows customizing section fonts
 \allsectionsfont{\sffamily}
 \usepackage[hidelinks]{hyperref} % For clickable URLs without link borders
+\usepackage{seqsplit} % Add this to the preamble
+
+% ━━━━━━━━━━━━━━━━━━━━━━━━ Define Variables ━━━━━━━━━━━━━━━━━━━━━━━━ %
+\def\logopath{../assets/caiac_logo.png}  % Changed to relative path
+\def\programlongname{
+    Intro Fellowship
+}
+\def\timeperiod{
+    Spring 2025
+}
+
+% Define custom colors from JSON
+% \definecolor{primaryColor}{HTML}{B48BFF}
+\definecolor{primaryColor}{HTML}{ 0B0D63 }
+% \definecolor{primaryFaded}{HTML}{AEA3CA}
+\definecolor{primaryFaded}{HTML}{ 789BD6 }
 
 \begin{document}
 \thispagestyle{empty} % Remove page numbering
 
 % ───────────────────── Header (logo, title, etc.) ─────────────────────
 \begin{center}
-    % Replace this with your own header image if desired
-    % \includegraphics[width=0.4\textwidth]{some_logo.png}
-
-    {\Large \textbf{AI Safety Student Team}}\\
-    {\large AISST Intro Fellowship Spring 2024}
+    \includegraphics[width=0.2\textwidth]{\logopath}\\
+    \vspace{0.2em}
+    {\color{primaryFaded}\programlongname\color{primaryFaded}\timeperiod}
 \end{center}
 
-\vspace{2em}
+\vspace{1em}
 
 % ───────────────────── Page Title ─────────────────────
 \begin{center}
     {\LARGE \textbf{Further Reading}}
 \end{center}
 
-\vspace{3em}
+\vspace{1em}
 
 % ───────────────────── Readings Table ─────────────────────
-\begin{center}
-\renewcommand{\arraystretch}{1.4} % Slightly increase row height
-\begin{tabular}{m{0.07\textwidth} m{0.12\textwidth} m{0.75\textwidth}}
-% 1. Locating and Editing Factual Associations
-\centering
-% \includegraphics[width=\linewidth]{icon_arxiv.png}
-%   & \centering \includegraphics[width=\linewidth]{qr_locating.png} 
-  & \textbf{Locating and Editing Factual Associations in GPT}\\
-  & & \small \url{https://arxiv.org/abs/2202.05262} \\
+% 
+\noindent\textbf{ A short introduction to machine learning }\\
+\textit{ Ngo (2021) }\\
+{\small \url{ www.alignmentforum.org/posts/qE73pqxAZmeACsAdF/a-short-introduction-to-machine-learning }}
 
-% 2. Emergent World Representations
-\centering
-% \includegraphics[width=\linewidth]{icon_arxiv.png}
-%   & \centering \includegraphics[width=\linewidth]{qr_emergent.png} 
-  & \textbf{Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task}\\
-  & & \small \url{https://arxiv.org/abs/2210.13382} \\
+\vspace{1em}
+% 
+\noindent\textbf{ Machine Learning for Humans, Part 2.1: Supervised Learning }\\
+\textit{ Maini and Sabri (2017) }\\
+{\small \url{ medium.com/@v_maini/supervised-learning-740383a2feab }}
 
-% 3. Causal Scrubbing
-\centering
-% \includegraphics[width=\linewidth]{icon_af.png}
-%   & \centering \includegraphics[width=\linewidth]{qr_causalscrub.png} 
-  & \textbf{Causal Scrubbing: a method for rigorously testing interpretability hypotheses}\\
-  & & \small \url{https://alignmentforum.org/posts/JvZhzhycHu2Yd57RN/causal-scrubbing-a-method-for-rigorously-testing} \\
+\vspace{1em}
+% 
+\noindent\textbf{ What is self-supervised learning? }\\
+\textit{ CodeBasics (2021) }\\
+{\small \url{ youtu.be/sJzuNAisXHA }}
 
-% 4. Adversarial Examples Are Not Bugs
-\centering
-% \includegraphics[width=\linewidth]{icon_arxiv.png}
-%   & \centering \includegraphics[width=\linewidth]{qr_adversarial.png} 
-  & \textbf{Adversarial Examples Are Not Bugs, They Are Features}\\
-  & & \small \url{https://arxiv.org/abs/1905.02175} \\
+\vspace{1em}
+% 
+\noindent\textbf{ Introduction to reinforcement learning }\\
+\textit{ von Hasselt (2021) }\\
+{\small \url{ www.youtube.com/watch?v=TCCjZe0y4Qc&t=2m0s }}
 
-% 5. Jailbroken: How Does LLM Safety Training Fail?
-\centering
-% \includegraphics[width=\linewidth]{icon_smiley.png}
-%   & \centering \includegraphics[width=\linewidth]{qr_jailbroken.png} 
-  & \textbf{Jailbroken: How Does LLM Safety Training Fail?}\\
-  & & \small \url{https://arxiv.org/pdf/2307.02483.pdf} \\
+\vspace{1em}
+% 
+\noindent\textbf{ The spelled-out intro to neural networks and backpropagation: building micrograd }\\
+\textit{ Karpathy (2022) }\\
+{\small \url{ youtu.be/VMj-3S1tku0 }}
 
-% 6. Revisiting Model Stitching
-\centering
-% \includegraphics[width=\linewidth]{icon_arxiv.png}
-%   & \centering \includegraphics[width=\linewidth]{qr_stitching.png} 
-  & \textbf{Revisiting Model Stitching to Compare Neural Representations}\\
-  & & \small \url{https://arxiv.org/abs/2106.07682} \\
+\vspace{1em}
+% 
+\noindent\textbf{ Transformers from scratch }\\
+\textit{ Rohrer (2021) }\\
+{\small \url{ e2eml.school/transformers.html }}
 
-\end{tabular}
-\end{center}
+\vspace{1em}
+% 
+\noindent\textbf{ Machine learning for humans }\\
+\textit{ Maini and Sabri (2017) }\\
+{\small \url{ medium.com/machine-learning-for-humans/why-machine-learning-matters-6164faf1df12 }}
+
+\vspace{1em}
+% 
+\noindent\textbf{ Machine learning glossary }\\
+\textit{ Google (2017) }\\
+{\small \url{ developers.google.com/machine-learning/glossary }}
+
+\vspace{1em}
+% 
+\noindent\textbf{ Spinning up deep RL: part 1 and part 2 }\\
+\textit{ OpenAI (2018) }\\
+{\small \url{ spinningup.openai.com/en/latest/spinningup/rl_intro.html }}
+
+\vspace{1em}
+% 
+\noindent\textbf{ A (long) peek into reinforcement learning }\\
+\textit{ Weng (2018) }\\
+{\small \url{ lilianweng.github.io/posts/2018-02-19-rl-overview/ }}
+
+\vspace{1em}
+% 
+% 
 
 \end{document}

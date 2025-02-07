@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}   % For including images
+\usepackage[scaled]{helvet}
+\renewcommand{\familydefault}{\sfdefault} % Use Helvetica
+\usepackage{xcolor}     % For custom colors
+\usepackage{array}      % For tabular column types
+\usepackage{sectsty}    % Allows customizing section fonts
+\allsectionsfont{\sffamily}
+\usepackage[hidelinks]{hyperref} % For clickable URLs without link borders
+\usepackage{seqsplit} % Add this to the preamble
+
+% ━━━━━━━━━━━━━━━━━━━━━━━━ Define Variables ━━━━━━━━━━━━━━━━━━━━━━━━ %
+\def\logopath{../assets/caiac_logo.png}  % Changed to relative path
+\def\programlongname{
+    {{ program_long_name }}
+}
+\def\timeperiod{
+    {{ time_period }}
+}
+
+% Define custom colors from JSON
+% \definecolor{primaryColor}{HTML}{B48BFF}
+\definecolor{primaryColor}{HTML}{ {{ primary_color }} }
+% \definecolor{primaryFaded}{HTML}{AEA3CA}
+\definecolor{primaryFaded}{HTML}{ {{ primary_color_faded }} }
+
+\begin{document}
+\thispagestyle{empty} % Remove page numbering
+
+% ───────────────────── Header (logo, title, etc.) ─────────────────────
+\begin{center}gi
+    \includegraphics[width=0.2\textwidth]{\logopath}\\
+    \vspace{0.2em}
+    {\color{primaryFaded}\programlongname\color{primaryFaded}\timeperiod}
+\end{center}
+
+\vspace{1em}
+
+% ───────────────────── Readings Table ─────────────────────
+% {% for reading in core_readings %}
+% {% if reading.read_on_device %}
+\noindent\textbf{ {{reading.title}} }\\
+\textit{ {{reading.author}} ({{reading.year}}) }\\
+{\small \url{ {{reading.url | replace("http://", "") | replace("https://", "")}} }}
+
+\vspace{1em}
+% {% endif %}
+% {% endfor %}
+\textbf{Notes:}
+% {# EXAMPLE
+\noindent\textbf{ Auditing large language models: A three-layered approach }\\
+\textit{ Mökander et al. (2023) }\\
+{\small \url{ papers.ssrn.com/sol3/papers.cfm?abstract_id=4361607 }}
+
+\vspace{4em}
+% #}
+
+\end{document}

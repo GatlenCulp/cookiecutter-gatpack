@@ -10,75 +10,56 @@
 \usepackage{sectsty}    % Allows customizing section fonts
 \allsectionsfont{\sffamily}
 \usepackage[hidelinks]{hyperref} % For clickable URLs without link borders
+\usepackage{seqsplit} % Add this to the preamble
+
+% ━━━━━━━━━━━━━━━━━━━━━━━━ Define Variables ━━━━━━━━━━━━━━━━━━━━━━━━ %
+\def\logopath{../assets/caiac_logo.png}  % Changed to relative path
+\def\programlongname{
+    {{ program_long_name }}
+}
+\def\timeperiod{
+    {{ time_period }}
+}
+
+% Define custom colors from JSON
+% \definecolor{primaryColor}{HTML}{B48BFF}
+\definecolor{primaryColor}{HTML}{ {{ primary_color }} }
+% \definecolor{primaryFaded}{HTML}{AEA3CA}
+\definecolor{primaryFaded}{HTML}{ {{ primary_color_faded }} }
 
 \begin{document}
 \thispagestyle{empty} % Remove page numbering
 
 % ───────────────────── Header (logo, title, etc.) ─────────────────────
 \begin{center}
-    % Replace this with your own header image if desired
-    % \includegraphics[width=0.4\textwidth]{some_logo.png}
-
-    {\Large \textbf{AI Safety Student Team}}\\
-    {\large AISST Intro Fellowship Spring 2024}
+    \includegraphics[width=0.2\textwidth]{\logopath}\\
+    \vspace{0.2em}
+    {\color{primaryFaded}\programlongname\color{primaryFaded}\timeperiod}
 \end{center}
 
-\vspace{2em}
+\vspace{1em}
 
 % ───────────────────── Page Title ─────────────────────
 \begin{center}
     {\LARGE \textbf{Further Reading}}
 \end{center}
 
-\vspace{3em}
+\vspace{1em}
 
 % ───────────────────── Readings Table ─────────────────────
-\begin{center}
-\renewcommand{\arraystretch}{1.4} % Slightly increase row height
-\begin{tabular}{m{0.07\textwidth} m{0.12\textwidth} m{0.75\textwidth}}
-% 1. Locating and Editing Factual Associations
-\centering
-% \includegraphics[width=\linewidth]{icon_arxiv.png}
-%   & \centering \includegraphics[width=\linewidth]{qr_locating.png} 
-  & \textbf{Locating and Editing Factual Associations in GPT}\\
-  & & \small \url{https://arxiv.org/abs/2202.05262} \\
+% {% for reading in further_readings %}
+\noindent\textbf{ {{reading.title}} }\\
+\textit{ {{reading.author}} ({{reading.year}}) }\\
+{\small \url{ {{reading.url | replace("http://", "") | replace("https://", "")}} }}
 
-% 2. Emergent World Representations
-\centering
-% \includegraphics[width=\linewidth]{icon_arxiv.png}
-%   & \centering \includegraphics[width=\linewidth]{qr_emergent.png} 
-  & \textbf{Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task}\\
-  & & \small \url{https://arxiv.org/abs/2210.13382} \\
+\vspace{1em}
+% {% endfor %}
+% {# EXAMPLE
+\noindent\textbf{ Auditing large language models: A three-layered approach }\\
+\textit{ Mökander et al. (2023) }\\
+{\small \url{ papers.ssrn.com/sol3/papers.cfm?abstract_id=4361607 }}
 
-% 3. Causal Scrubbing
-\centering
-% \includegraphics[width=\linewidth]{icon_af.png}
-%   & \centering \includegraphics[width=\linewidth]{qr_causalscrub.png} 
-  & \textbf{Causal Scrubbing: a method for rigorously testing interpretability hypotheses}\\
-  & & \small \url{https://alignmentforum.org/posts/JvZhzhycHu2Yd57RN/causal-scrubbing-a-method-for-rigorously-testing} \\
-
-% 4. Adversarial Examples Are Not Bugs
-\centering
-% \includegraphics[width=\linewidth]{icon_arxiv.png}
-%   & \centering \includegraphics[width=\linewidth]{qr_adversarial.png} 
-  & \textbf{Adversarial Examples Are Not Bugs, They Are Features}\\
-  & & \small \url{https://arxiv.org/abs/1905.02175} \\
-
-% 5. Jailbroken: How Does LLM Safety Training Fail?
-\centering
-% \includegraphics[width=\linewidth]{icon_smiley.png}
-%   & \centering \includegraphics[width=\linewidth]{qr_jailbroken.png} 
-  & \textbf{Jailbroken: How Does LLM Safety Training Fail?}\\
-  & & \small \url{https://arxiv.org/pdf/2307.02483.pdf} \\
-
-% 6. Revisiting Model Stitching
-\centering
-% \includegraphics[width=\linewidth]{icon_arxiv.png}
-%   & \centering \includegraphics[width=\linewidth]{qr_stitching.png} 
-  & \textbf{Revisiting Model Stitching to Compare Neural Representations}\\
-  & & \small \url{https://arxiv.org/abs/2106.07682} \\
-
-\end{tabular}
-\end{center}
+\vspace{4em}
+% #}
 
 \end{document}

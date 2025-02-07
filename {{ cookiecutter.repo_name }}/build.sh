@@ -51,4 +51,4 @@ gatpack combine \
     $FURTHER_READINGS_PDF \
     $OUTPUT_PDF
 
-# Add footer to the readings
+open $OUTPUT_PDF

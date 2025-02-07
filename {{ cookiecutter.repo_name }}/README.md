@@ -6,6 +6,10 @@ This sample project is created by [GatPack](<>), a Python templating tool.
 
 {{ cookiecutter.description }}
 
+## Other Resources
+
+If you're looking for AI Safety Reading PDFs, visit [MIT AI Alignment's public repository of Readings](https://airtable.com/app6h2R2QQuhvFYVq/shr6HR8IkYktpdmA8/tbliHUCwDwu4I7Opl). Brought to you by Gatlen 😎
+
 ## Setup
 
 To install GatPack, you will need python and LaTeX installed, then you can run
