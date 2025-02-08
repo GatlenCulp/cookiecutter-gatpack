@@ -1,0 +1,10 @@
+
+% Define Jinja placeholder commands for better editor visualization
+\usepackage{xcolor}
+\definecolor{jinjaColor}{HTML}{7B68EE}  % Medium slate blue color for Jinja
+\definecolor{jinjaVarBg}{HTML}{E6E6FA}    % Light lavender for variables
+\definecolor{jinjaBlockBg}{HTML}{FFE4E1}  % Misty rose for blocks
+\definecolor{jinjaCommentBg}{HTML}{E0FFFF}  % Light cyan for comments
+\newcommand{\VAR}[1]{\colorbox{jinjaVarBg}{\detokenize{#1}}}
+\newcommand{\BLOCK}[1]{\colorbox{jinjaBlockBg}{\detokenize{#1}}}
+\newcommand{\COMMENT}[1]{\colorbox{jinjaCommentBg}{\detokenize{#1}}} 

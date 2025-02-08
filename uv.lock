@@ -137,11 +137,11 @@ dependencies = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "gatpack", specifier = ">=0.0.3" }]
+requires-dist = [{ name = "gatpack", specifier = ">=0.0.5" }]
 
 [[package]]
 name = "gatpack"
-version = "0.0.4"
+version = "0.0.5"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cookiecutter" },
@@ -157,9 +157,9 @@ dependencies = [
     { name = "rich" },
     { name = "typer" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/af/29/126cf342e4e25803b936459f39907bb760860150d06f3a658415ab0b720a/gatpack-0.0.4.tar.gz", hash = "sha256:0b39e68d251c04990936efe6ac94e735fc9cb5d477bd62fe9f81408648ea5ece", size = 3926636 }
+sdist = { url = "https://files.pythonhosted.org/packages/4e/c6/e8026241709f5afc207cf25d563410dc3e5152eb6f34750b41de1c9f519b/gatpack-0.0.5.tar.gz", hash = "sha256:eb5d09af4a0d39dc9d3f631519d489a3e6097f915f35c3c415db0a127c643f7b", size = 4944068 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f9/1b/ed287ee554eb24e5d8e5aae82ed19dcb5a67dec202eeccdc7c3406098743/gatpack-0.0.4-py3-none-any.whl", hash = "sha256:137a29f692c7603538a683d2464bc247f3cb204ac83a53d11047f64ca55d5ae8", size = 18785 },
+    { url = "https://files.pythonhosted.org/packages/4e/2a/94fb04926ece1643082e7a06221cb8aedb32bb16073c79ff88e312824c8b/gatpack-0.0.5-py3-none-any.whl", hash = "sha256:cb3d499cd14a7955f8ced012516269a14ca5dcf64154ed109b6429045d70a652", size = 23729 },
 ]
 
 [[package]]

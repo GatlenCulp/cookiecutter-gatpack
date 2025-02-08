@@ -31,7 +31,8 @@ rm -f $COVER_PDF
 gatpack render \
     $COVER_LATEX_TEMPLATE \
     $COVER_LATEX \
-    $COMPOSE
+    $COMPOSE \
+    --no-use-standard-jinja
 gatpack build \
     $COVER_LATEX \
     $COVER_PDF

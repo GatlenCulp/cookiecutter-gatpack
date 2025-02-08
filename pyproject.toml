@@ -17,7 +17,7 @@ classifiers = [
 requires-python = "~=3.12"
 
 dependencies = [
-    "gatpack>=0.0.3",
+    "gatpack>=0.0.5",
 ]
 
 [project.urls]
