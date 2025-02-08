@@ -1,12 +1,21 @@
 \documentclass[12pt]{article}
 
+% Define Jinja placeholder commands for better editor visualization
+\usepackage{xcolor}
+\definecolor{jinjaColor}{HTML}{7B68EE}  % Medium slate blue color for Jinja
+\definecolor{jinjaVarBg}{HTML}{E6E6FA}    % Light lavender for variables
+\definecolor{jinjaBlockBg}{HTML}{FFE4E1}  % Misty rose for blocks
+\definecolor{jinjaCommentBg}{HTML}{E0FFFF}  % Light cyan for comments
+\newcommand{\VAR}[1]{\colorbox{jinjaVarBg}{\detokenize{#1}}}
+\newcommand{\BLOCK}[1]{\colorbox{jinjaBlockBg}{\detokenize{#1}}}
+\newcommand{\COMMENT}[1]{\colorbox{jinjaCommentBg}{\detokenize{#1}}}
+
 \usepackage[margin=1in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}  % Required for including images
 \usepackage[scaled]{helvet} % Helvetica font package
 \renewcommand{\familydefault}{\sfdefault} % Make Helvetica the default font
 \usepackage{array}  % For table formatting
-\usepackage{xcolor}  % For custom colors
 \usepackage{hyperref}  % Add this with other packages
 \hypersetup{
     colorlinks=false,  % Disable colored links
@@ -16,70 +25,52 @@
 \usepackage{sectsty}        % Allows customizing section fonts
 \allsectionsfont{\sffamily} % Make section titles sans-serif
 
+
+\begin{document}
 % ━━━━━━━━━━━━━━━━━━━━━━━━ Define Variables ━━━━━━━━━━━━━━━━━━━━━━━━ %
-\def\logopath{../assets/caiac_logo.png}  % Changed to relative path
-\def\programlongname{program_long_name}
-\def\programlongname{
-    {{ program_long_name }}
-}
-\def\timeperiod{
-    {{ time_period }}
-}
-\def\chroninfo{
-    {{ chron_info }}
-}
-\def\maintitle{
-    {{ title }}
-}
-\def\mainsubtitle{
-    {{ subtitle }}
-}  % Changed from \subtitle for clarity
+
 % Define custom colors from JSON
-% \definecolor{primaryColor}{HTML}{B48BFF}
-\definecolor{primaryColor}{HTML}{ {{ primary_color }} }
-% \definecolor{primaryFaded}{HTML}{AEA3CA}
-\definecolor{primaryFaded}{HTML}{ {{ primary_color_faded }} }
+\definecolor{primaryColor}{HTML}{B48BFF}
+\definecolor{primaryFaded}{HTML}{AEA3CA}
 
 % ━━━━━━━━━━━━━━━━━━━━━━ Document Begins Here ━━━━━━━━━━━━━━━━━━━━━━ %
-\begin{document}
 
 \thispagestyle{empty} % Remove page numbering
-
 % ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Header ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 \begin{center}
-    \includegraphics[width=0.5\textwidth]{\logopath}\\
+    \includegraphics[width=0.5\textwidth]{../assets/caiac_logo.png}\\
     \vspace{0.5em}
-    {\Large \textcolor[HTML]{333333}{\programlongname}}\\
+    {\Large \textcolor[HTML]{333333}{\VAR{long_name}}}\\
     \vspace{0.5em}
-    {\textcolor[HTML]{333333}{\timeperiod}}
+    {\textcolor[HTML]{333333}{\VAR{time_period}}}
+    \COMMENT{This is an example comment!}
 \end{center}
 
 \vspace{8em}
 
 % ━━━━━━━━━━━━━━━━━━━━━━━━━━━ Main Title ━━━━━━━━━━━━━━━━━━━━━━━━━━━
 \begin{center}
-    [ \chroninfo ]\\
+    [ \VAR{chron_info} ]\\
     \vspace{0.7em}
-    {\Huge \textbf{\maintitle}}\\
+    {\Huge \textbf{\VAR{title}}}\\
     \vspace{0.7em}
-    \uppercase{\mainsubtitle}
+    \uppercase{\VAR{subtitle}}
 \end{center}
 
 \vfill  % Push the following content to the bottom
-
 % ━━━━━━━━━━━━━━━━━━━━━━━━━━━━ Readings ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 \begin{center}
 \begin{minipage}{0.8\textwidth}  % Create a minipage to contain the readings
 \centering
-% {% for reading in core_readings %}
+\BLOCK{for reading in core_readings}
 {\color{primaryFaded}
     {\footnotesize
-        {{reading.title}}\\
-        \emph{({{reading.author}}, {{reading.year}})}
+        \VAR{reading.title}\\
+        \emph{(\VAR{reading.author}, \VAR{reading.year})}
     }
 }
 \vspace{1em}
-% {% endfor %}
+\BLOCK{endfor}
 \end{minipage}
 \end{center}
 

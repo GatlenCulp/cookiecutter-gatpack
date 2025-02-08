@@ -187,16 +187,16 @@ cython_debug/
 #.idea/
 
 # LaTeX Stuff
-"**/*.aux": true,
-"**/*.bbl": true,
-"**/*.bcf": true,
-"**/*.blg": true,
-"**/*.fdb_latexmk": true,
-"**/*.fls": true,
-"**/*.lof": true,
-"**/*.log": false,
-"**/*.lot": true,
-"**/*.out": true,
-"**/*.synctex.gz*": true,
-"**/*.toc": true,
-"**/_minted*": true
+**/*.aux
+**/*.bbl
+**/*.bcf
+**/*.blg
+**/*.fdb_latexmk
+**/*.fls
+**/*.lof
+**/*.log
+**/*.lot
+**/*.out
+**/*.synctex.gz*
+**/*.toc
+**/_minted*
