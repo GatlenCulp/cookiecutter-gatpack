@@ -43,7 +43,8 @@ rm -f $DEVICE_READINGS_PDF
 gatpack render \
     $DEVICE_READINGS_LATEX_TEMPLATE \
     $DEVICE_READINGS_LATEX \
-    $COMPOSE
+    $COMPOSE \
+    --no-use-standard-jinja
 gatpack build \
     $DEVICE_READINGS_LATEX \
     $DEVICE_READINGS_PDF
