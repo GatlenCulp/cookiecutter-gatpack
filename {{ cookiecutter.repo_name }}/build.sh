@@ -69,4 +69,4 @@ gatpack combine \
     $OUTPUT_PDF
     # $READINGS_PDFS \
 
-open $OUTPUT_PDF
+open $OUTPUT_PDF || xdg-open $OUTPUT_PDF || echo "Failed to automatically open file at $OUTPUT_PDF"

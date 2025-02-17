@@ -7,6 +7,11 @@ PYTHON_VERSION = 3.12
 PYTHON_INTERPRETER = python
 DOCS_PORT ?= 8000
 
+.PHONY: activate-env
+activate-env: ## Activate the gatpack environment from another project
+	source ~/maia/gatpack/.venv/bin/activate
+
+
 #################################################################################
 # UTILITIES                                                                     #
 #################################################################################
