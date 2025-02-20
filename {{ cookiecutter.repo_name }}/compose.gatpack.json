@@ -6,14 +6,23 @@
   "context": {
     "program_long_name": "Intro Fellowship",
     "time_period": "Spring 2025",
-    "chron_info": "WEEK 0",
-    "title": "Introduction to machine learning",
+    "chron_info": "WEEK 1",
+    "title": "Introduction to using gatpack",
     "subtitle": "READINGS",
     "primary_color": "0B0D63",
     "primary_color_faded": "789BD6",
     "core_readings": [
       {
         "title": "Neural Networks",
+        "read_on_device": true,
+        "subsection": "Chapters 1-6",
+        "author": "3Blue1Brown",
+        "year": 2024,
+        "url": "https://youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&feature=shared",
+        "thumbnail_path": ""
+      },
+      {
+        "title": "Hello World",
         "read_on_device": true,
         "subsection": "Chapters 1-6",
         "author": "3Blue1Brown",
@@ -130,6 +139,7 @@
           "combine": [
             "cover/cover.pdf",
             "device_readings/device_readings.pdf",
+            "readings/*.pdf",
             "further_readings/further_readings.pdf"
           ],
           "to": "output/packet.pdf"
