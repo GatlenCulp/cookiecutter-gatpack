@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/GatlenCulp/gatpack/refs/heads/feature/compose-actions/gatpack/schema/json/GatPackCompose.schema.json",
+  "version": "1.0",
   "name": "Intro Fellowship Reading Packet",
   "description": "Packet for CAIAC's Spring 2025 Intro Fellowship",
-  "version": "1.0",
   "context": {
     "program_long_name": "Intro Fellowship",
     "time_period": "Spring 2025",
@@ -57,26 +57,26 @@
       "steps": [
         {
           "name": "Render cover page",
-          "from": "cover/cover.jinja.tex",
-          "to": "cover/cover.pdf"
+          "from": "01_cover/cover.jinja.tex",
+          "to": "01_cover/cover.pdf"
         },
         {
           "name": "Render device readings page",
-          "from": "device_readings/device_readings.jinja.tex",
-          "to": "device_readings/device_readings.pdf"
+          "from": "02_device-readings/device_readings.jinja.tex",
+          "to": "02_device-readings/device_readings.pdf"
         },
         {
           "name": "Render further readings page",
-          "from": "further_readings/further_readings.jinja.tex",
-          "to": "further_readings/further_readings.pdf"
+          "from": "04_further-readings/further_readings.jinja.tex",
+          "to": "04_further-readings/further_readings.pdf"
         },
         {
           "name": "Combine all readings into packet.pdf",
           "combine": [
-            "cover/cover.pdf",
-            "device_readings/device_readings.pdf",
-            "readings/*.pdf",
-            "further_readings/further_readings.pdf"
+            "01_cover/cover.pdf",
+            "02_device-readings/device_readings.pdf",
+            "03_core-readings/*.pdf",
+            "04_further-readings/further_readings.pdf"
           ],
           "to": "output/packet.pdf"
         }

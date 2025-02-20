@@ -65,7 +65,10 @@ clean-python: ## Clean all compiled Python files
 
 .PHONY: clean
 clean: clean-latex clean-python ## Delete all compiled Python files and LaTeX build artifacts
-	find . -type f -name "*.jinja.pdf" -delete
+	cd './{{ cookiecutter.repo_name }}' && \
+	find . -type f -name "*.jinja.pdf" -delete && \
+	find ./01_cover ./02_device-readings ./04_further-readings ./output -type f -name "*.pdf" -delete && \
+	find ./01_cover ./02_device-readings ./04_further-readings -type f -name "*.tex" -not -name "*.jinja.tex" -delete
 
 .PHONY: lint ## Lint using ruff (use `make format` to do formatting)
 lint:
