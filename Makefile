@@ -42,11 +42,30 @@ publish-all: format lint publish docs-publish ## Run format, lint, publish packa
 # CLEAN COMMANDS                                                                #
 #################################################################################
 
+.PHONY: clean-latex
+clean-latex: ## Clean all LaTeX helper files
+	find . -type f -name "*.aux" -delete
+	find . -type f -name "*.bbl" -delete
+	find . -type f -name "*.bcf" -delete
+	find . -type f -name "*.blg" -delete
+	find . -type f -name "*.fdb_latexmk" -delete
+	find . -type f -name "*.fls" -delete
+	find . -type f -name "*.lof" -delete
+	find . -type f -name "*.log" -delete
+	find . -type f -name "*.lot" -delete
+	find . -type f -name "*.out" -delete
+	find . -type f -name "*.synctex.gz*" -delete
+	find . -type f -name "*.toc" -delete
+	find . -type d -name "_minted*" -delete
 
-.PHONY: clean
-clean: ## Delete all compiled Python files
+.PHONY: clean-python
+clean-python: ## Clean all compiled Python files
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
+
+.PHONY: clean
+clean: clean-latex clean-python ## Delete all compiled Python files and LaTeX build artifacts
+	find . -type f -name "*.jinja.pdf" -delete
 
 .PHONY: lint ## Lint using ruff (use `make format` to do formatting)
 lint:
