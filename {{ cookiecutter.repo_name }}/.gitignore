@@ -1,0 +1,51 @@
+# test cache
+manual_test/
+
+# other local dev info
+.history/
+# .vscode/
+
+# Mac OS-specific storage files
+.DS_Store
+Icon?
+Icon
+Icon[\r]
+
+# ruff
+.ruff_cache/
+
+# vim
+*.swp
+*.swo
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments and Secrets
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+secrets/
+!secrets/schema
+
+# LaTeX Stuff
+**/*.aux
+**/*.bbl
+**/*.bcf
+**/*.blg
+**/*.fdb_latexmk
+**/*.fls
+**/*.lof
+**/*.log
+**/*.lot
+**/*.out
+**/*.synctex.gz*
+**/*.toc
+**/_minted*

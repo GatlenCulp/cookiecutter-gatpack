@@ -1,0 +1,24 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		// ##############
+		// ### VSCode ###
+		// ##############
+		{
+			"label": "[VSCode] Startup Welcome 💛",
+			"detail": "Print a Welcome screen",
+			"type": "shell",
+			"command": "make _welcome",
+			"group": "none",
+			"icon": {
+				"id": "heart-filled",
+				"color": "terminal.ansiYellow"
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated"
+			},
+			"problemMatcher": []
+		}
+	]
+}

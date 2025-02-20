@@ -7,6 +7,11 @@ PYTHON_VERSION = 3.12
 PYTHON_INTERPRETER = python
 DOCS_PORT ?= 8000
 
+.PHONY: activate-env
+activate-env: ## Activate the gatpack environment from another project
+	source ~/maia/gatpack/.venv/bin/activate
+
+
 #################################################################################
 # UTILITIES                                                                     #
 #################################################################################
@@ -26,14 +31,9 @@ create_environment: ## Set up python interpreter environment
 	uv venv
 	@echo ">>> New virtualenv with uv created. Activate with:\nsource '.venv/bin/activate'"
 
-
-
 .PHONY: requirements
 requirements: ## Install Python Dep
-	
 	uv sync
-	
-
 
 .PHONY: publish-all
 publish-all: format lint publish docs-publish ## Run format, lint, publish package and docs
@@ -48,11 +48,9 @@ clean: ## Delete all compiled Python files
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
 
-
 .PHONY: lint ## Lint using ruff (use `make format` to do formatting)
 lint:
 	ruff check --config pyproject.toml cookiecutter_gatpack
-
 
 .PHONY: format ## Format source code with black
 format:
@@ -101,8 +99,10 @@ test-debug-last: ## Debug last failed test with pdb
 
 .PHONY: manual_test
 manual_test:
-	mkdir -p manual_test && cd manual_test
-	cookiecutter https://github.com/GatlenCulp/cookiecutter-gatpack
+	rm -rf manual_test
+	mkdir -p manual_test && cd manual_test && \
+	cookiecutter .. --checkout "dev"
+	# gatpack init
 
 .PHONY: _clean_manual_test
 _clean_manual_test:
@@ -120,15 +120,13 @@ data: requirements
 # Self Documenting Commands                                                     #
 #################################################################################
 
-.DEFAULT_GOAL := help
-
 .PHONY: _print-logo
 _print-logo: ## Prints the GOTem logo
 	@echo "\033[38;5;39m   ____  ___ _____"
-		@echo "  / ___|/ _ \_   _|__ _ __ ___"
-		@echo " | |  _| | | || |/ _ \ '_ \` _ \"
-		@echo " | |_| | |_| || |  __/ | | | | |"
-		@echo "  \____|\___/ |_|\___|_| |_| |_|\033[0m"
+	@echo "  / ___|/ _ \_   _|__ _ __ ___"
+	@echo " | |  _| | | || |/ _ \ '_ \` _ \\"
+	@echo " | |_| | |_| || |  __/ | | | | |"
+	@echo "  \____|\___/ |_|\___|_| |_| |_|\033[0m"
 
 
 .PHONY: help
@@ -139,3 +137,5 @@ help: _print-logo  ## Show this help message
 
 .PHONY: all
 all: help
+
+.DEFAULT_GOAL := all

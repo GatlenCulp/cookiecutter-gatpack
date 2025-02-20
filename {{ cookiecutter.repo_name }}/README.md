@@ -1,59 +1,33 @@
-# GatPack Cookie Cutter Repo
+# GatPack -- {{ cookiecutter.project_name }}
 
 This sample project is created by [GatPack](<>), a Python templating tool.
 
+## About this project
+
+{{ cookiecutter.description }}
+
+## Other Resources
+
+If you're looking for AI Safety Reading PDFs, visit [MIT AI Alignment's public repository of Readings](https://airtable.com/app6h2R2QQuhvFYVq/shr6HR8IkYktpdmA8/tbliHUCwDwu4I7Opl). Brought to you by Gatlen 😎
+
 ## Setup
 
-```bash
-brew install pango
-brew install libffi
-brew install cairo
-brew install gobject-introspection
-
-brew install weasyprint
-```
-
-To install GatPack, you will need python installed, then you can run
+To install GatPack, you will need python and LaTeX installed, then you can run
 
 ```bash
 pip install gatpack --global
 ```
 
-Once you are in this directory, run
+Once you are in this directory, run the following to make sure it is installed
 
 ```bash
 gatpack
 ```
 
-And you will receive a list of print options. You can run the example project with
+<!-- And you will receive a list of print options.  -->
+
+You can run the example project with
 
 ```bash
-gatpack build example-packet
+./build.sh
 ```
-
-## Architecture
-
-There are a few directories:
-
-`{{ cookiecutter.project_name }}`
-
-- `.git`
-- `config.gatpack.yaml` -- Define your high-level variables (URLs, workflows, etc.)
-
-```yaml
-workflows:
-    example-packet:
-        inputs:
-            - qr-code:
-```
-
-<!-- Potentially use Hydra for hierarchical settings? -->
-
-<!-- Should this be JSON to use some kind of schema? -->
-
-<!-- Maybe have some schema be specified per template to be modular. Optionally that is. -->
-
-- `00_assets` -- Define your pre-existing or view rendered PDFs, images, etc.
-- `01_templates` -- Define/view your HTML templates with Jinja
-- `02_web` -- Your rendered webpages
-- `03_pdf` -- Your final resulting packets

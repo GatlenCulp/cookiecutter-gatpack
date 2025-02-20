@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}   % For including images
+\usepackage[scaled]{helvet}
+\usepackage{xcolor}     % For custom colors
+\usepackage{array}      % For tabular column types
+\usepackage{sectsty}    % Allows customizing section fonts
+\usepackage[hidelinks]{hyperref} % For clickable URLs without link borders
+\usepackage{seqsplit} % For splitting long sequences
+
+% Include the Jinja placeholder commands
+\input{../assets/jinja_placeholders}
+
+\renewcommand{\familydefault}{\sfdefault} % Use Helvetica
+\allsectionsfont{\sffamily}
+
+% ━━━━━━━━━━━━━━━━━━━━━━━━ Define Variables ━━━━━━━━━━━━━━━━━━━━━━━━ %
+\def\logopath{../assets/caiac_logo.png}  % Changed to relative path
+
+% Define custom colors from JSON
+\definecolor{primaryColor}{HTML}{0B0D63}
+\definecolor{primaryFaded}{HTML}{789BD6}
+
+\begin{document}
+\thispagestyle{empty} % Remove page numbering
+
+% ───────────────────── Header (logo, title, etc.) ─────────────────────
+\begin{center}
+    \includegraphics[width=0.2\textwidth]{\logopath}\\
+    \vspace{0.2em}
+    {\color{primaryFaded}Intro Fellowship\color{primaryFaded}Spring 2025}
+\end{center}
+
+\vspace{1em}
+
+% ───────────────────── Page Title ─────────────────────
+\begin{center}
+    {\LARGE \textbf{Further Reading}}
+\end{center}
+
+\vspace{1em}
+
+% ───────────────────── Readings Table ─────────────────────
+\noindent\textbf{A short introduction to machine learning}\\
+\textit{Ngo (2021)}\\
+{\small \url{www.alignmentforum.org/posts/qE73pqxAZmeACsAdF/a-short-introduction-to-machine-learning}}
+
+\vspace{1em}
+\noindent\textbf{Machine Learning for Humans, Part 2.1: Supervised Learning}\\
+\textit{Maini and Sabri (2017)}\\
+{\small \url{medium.com/@v_maini/supervised-learning-740383a2feab}}
+
+\vspace{1em}
+\noindent\textbf{What is self-supervised learning?}\\
+\textit{CodeBasics (2021)}\\
+{\small \url{youtu.be/sJzuNAisXHA}}
+
+\vspace{1em}
+\noindent\textbf{Introduction to reinforcement learning}\\
+\textit{von Hasselt (2021)}\\
+{\small \url{www.youtube.com/watch?v=TCCjZe0y4Qc&amp;t=2m0s}}
+
+\vspace{1em}
+\noindent\textbf{The spelled-out intro to neural networks and backpropagation: building micrograd}\\
+\textit{Karpathy (2022)}\\
+{\small \url{youtu.be/VMj-3S1tku0}}
+
+\vspace{1em}
+\noindent\textbf{Transformers from scratch}\\
+\textit{Rohrer (2021)}\\
+{\small \url{e2eml.school/transformers.html}}
+
+\vspace{1em}
+\noindent\textbf{Machine learning for humans}\\
+\textit{Maini and Sabri (2017)}\\
+{\small \url{medium.com/machine-learning-for-humans/why-machine-learning-matters-6164faf1df12}}
+
+\vspace{1em}
+\noindent\textbf{Machine learning glossary}\\
+\textit{Google (2017)}\\
+{\small \url{developers.google.com/machine-learning/glossary}}
+
+\vspace{1em}
+\noindent\textbf{Spinning up deep RL: part 1 and part 2}\\
+\textit{OpenAI (2018)}\\
+{\small \url{spinningup.openai.com/en/latest/spinningup/rl_intro.html}}
+
+\vspace{1em}
+\noindent\textbf{A (long) peek into reinforcement learning}\\
+\textit{Weng (2018)}\\
+{\small \url{lilianweng.github.io/posts/2018-02-19-rl-overview/}}
+
+\vspace{1em}
+
+
+\vspace{4em}
+
+\end{document}

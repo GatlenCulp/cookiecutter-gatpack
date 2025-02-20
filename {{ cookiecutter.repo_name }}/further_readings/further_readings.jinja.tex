@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}   % For including images
+\usepackage[scaled]{helvet}
+\usepackage{xcolor}     % For custom colors
+\usepackage{array}      % For tabular column types
+\usepackage{sectsty}    % Allows customizing section fonts
+\usepackage[hidelinks]{hyperref} % For clickable URLs without link borders
+\usepackage{seqsplit} % For splitting long sequences
+
+% Include the Jinja placeholder commands
+\input{../assets/jinja_placeholders}
+
+\renewcommand{\familydefault}{\sfdefault} % Use Helvetica
+\allsectionsfont{\sffamily}
+
+% ━━━━━━━━━━━━━━━━━━━━━━━━ Define Variables ━━━━━━━━━━━━━━━━━━━━━━━━ %
+\def\logopath{../assets/caiac_logo.png}  % Changed to relative path
+
+% Define custom colors from JSON
+\definecolor{primaryColor}{HTML}{\VAR{primary_color}}
+\definecolor{primaryFaded}{HTML}{\VAR{primary_color_faded}}
+
+\begin{document}
+\thispagestyle{empty} % Remove page numbering
+
+% ───────────────────── Header (logo, title, etc.) ─────────────────────
+\begin{center}
+    \includegraphics[width=0.2\textwidth]{\logopath}\\
+    \vspace{0.2em}
+    {\color{primaryFaded}\VAR{program_long_name}\color{primaryFaded}\VAR{time_period}}
+\end{center}
+
+\vspace{1em}
+
+% ───────────────────── Page Title ─────────────────────
+\begin{center}
+    {\LARGE \textbf{Further Reading}}
+\end{center}
+
+\vspace{1em}
+
+% ───────────────────── Readings Table ─────────────────────
+\BLOCK{for reading in further_readings}
+\noindent\textbf{\VAR{reading.title}}\\
+\textit{\VAR{reading.author} (\VAR{reading.year})}\\
+{\small \url{\VAR{reading.url | replace("http://", "") | replace("https://", "")}}}
+
+\vspace{1em}
+\BLOCK{endfor}
+
+
+\vspace{4em}
+
+\end{document}
