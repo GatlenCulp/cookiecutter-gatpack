@@ -79,6 +79,12 @@
             "04_further-readings/further_readings.pdf"
           ],
           "to": "output/packet.pdf"
+        },
+        {
+          "name": "Add footer to PDF",
+          "from": "output/packet.pdf",
+          "to": "output/packet-with-footers.pdf",
+          "text": "{n} of {N}"
         }
       ]
     }
