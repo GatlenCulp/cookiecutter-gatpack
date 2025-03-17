@@ -1,15 +1,5 @@
 {
-	"_copy_without_render": [
-		"build.sh",
-		"compose.gatpack.json",
-		".vscode",
-		"assets",
-		"cover",
-		"device_readings",
-		"further_readings",
-		"output",
-		"readings"
-	],
+	"_copy_without_render": ["reading-packet-example"],
 	"project_name": "GatPack Project",
 	"repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
 	"description": "Creates PDF packets for the AI Safety Fundamentals Reading Group"
